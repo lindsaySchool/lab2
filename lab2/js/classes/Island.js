@@ -1,23 +1,7 @@
 export default class Island {
     constructor(name) {
         this.name = name;
-    }
-    add() {
-        const island = document.createElement("div");
-        island.classList.add("island");
-        
-        // Voeg CSS-stijlen toe om de positie in te stellen
-        island.style.position = "absolute";
-        island.style.left = `${Math.random() * (window.innerWidth - 100)}px`; // Aanpassen aan de breedte van je eiland
-        island.style.top = `${Math.random() * (window.innerHeight - 100)}px`; // Aanpassen aan de hoogte van je eiland
-
-        //get random color for background
-        const randomColor = this.getRandomColor();
-        console.log(randomColor);
-        island.style.backgroundColor = randomColor;
-        island.innerHTML = this.name;
-        document.querySelector("#app").appendChild(island);
-
+        this.color = this.getRandomColor();
     }
 
     getRandomColor() {
