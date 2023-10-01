@@ -7,7 +7,10 @@ export default class Island {
     add() {
         const island = document.createElement("div");
         island.classList.add("island");
-        island.style.backgroundColor = "#FFB8A2";
+        //get random color for background
+        const randomColor = this.getRandomColor();
+        console.log(randomColor);
+        island.style.backgroundColor = randomColor;
         island.innerHTML = this.name;
         document.querySelector("#app").appendChild(island);
     }
