@@ -1,7 +1,6 @@
 export default class Island {
     constructor(name) {
         this.name = name;
-        console.log(this.name);
     }
 
     add() {
@@ -13,6 +12,7 @@ export default class Island {
         island.style.backgroundColor = randomColor;
         island.innerHTML = this.name;
         document.querySelector("#app").appendChild(island);
+
     }
   
     getRandomColor() {
@@ -40,6 +40,7 @@ export default class Island {
       ];
   
       // return a random name from the array
+      return names[Math.floor(Math.random() * names.length)];
     }
   }
   
