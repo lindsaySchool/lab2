@@ -11,6 +11,8 @@ export default class App {
     Event() {
         //console.log("event");
         document.querySelector("#btnAddIsland").addEventListener("click", () => this.addIsland());
+        document.querySelector("#btnSave").addEventListener("click", () => this.world.save());
+        document.querySelector("#btnLoad").addEventListener("click", () => this.world.load());
     }
 
     addIsland() {

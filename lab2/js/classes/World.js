@@ -11,12 +11,30 @@ export default class World {
   
     save() {
       // save array islands to localstorage as string
-      // loop over all this.islands and save the names
+      document.querySelectorAll(".island").forEach(island => {
+        // loop over all this.islands and save the names and colors
+        const islandObj = {
+          name: island.innerHTML,
+          color: island.style.backgroundColor
+        };
+        this.islands.push(islandObj);
+
+      });
+      localStorage.setItem("islands", JSON.stringify(this.islands));
+      console.log(this.islands);
     }
   
     load() {
       // load islands from localstorage into array
+      console.log("load");
+      // get the islands from localstorage
+      const islandcollection = JSON.parse(localStorage.getItem("islands"));
+      //console.log(islandcollection);
       // loop over the array and addIslands()
+      islandcollection.forEach(island => {
+        //obj to add function
+        this.addIsland(island);
+      });
     }
   
     getCoordinates() {
