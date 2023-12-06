@@ -39,10 +39,10 @@ export default class World {
   
     getCoordinates() {
       // return coordinates within the screen at random, feel free to change it up!
-      let randomSign = Math.random() < 0.5 ? -1 : 1;
+      //let randomSign = Math.random() < 0.5 ? -1 : 1;
       return {
-        x: ((Math.random() * window.innerWidth) / 2) * randomSign,
-        y: ((Math.random() * window.innerHeight) / 2) * randomSign
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight
       };
     }
   
